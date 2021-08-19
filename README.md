@@ -1,9 +1,9 @@
 
 # Chimie
 #### nombre femenino
-       ##### 1.1 Es la palabra Química en el idioma de francés
-       ##### 2.2 Ciencia que estudia la composición y las propiedades de la materia 
-       #####  3.3 Aplicación diseñada para facilitar a los alumnos a ubicar fácilmente las propiedades periódicas de un elemento.
+       ###### 1.1 Es la palabra Química en el idioma de francés
+       ###### 2.2 Ciencia que estudia la composición y las propiedades de la materia 
+       ###### 3.3 Aplicación diseñada para facilitar a los alumnos a ubicar fácilmente las propiedades periódicas de un elemento.
 
                       La tecnología digital es un medio interesante y atractivo, un medio privilegiado para adquirir cultura y conocimiento, y una herramienta de aprendizaje eficaz. Mientras que por otro lado la tecnología fue creada para facilitarle los procesos a el hombre y como hasta ahorita hemos aprendido en este curso sabemos que los Algoritmos son una serie de pasos para un programa computacional para completar una tarea.
 
