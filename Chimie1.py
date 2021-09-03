@@ -144,31 +144,32 @@ def lewis(v,r):
     print("\n")
     return numero_de_enlaces, electrones_no_compartidos
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-print("Hola Bienvenido a Chimie un programa que te ayudara en Química")
-print("\n")
-print("Por el momento tenemos solo dos opciones que puedes elegir : ")
-print("\n")
-print("La primera es obtener datos sobre el elemento que deseas")
-print("\n")
-print("Y la Segunda es aprender a sacar los datos necesarios para que puedas hacer tu estructura de Lewis en compuestos")
-print("\n")
-print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2")
 
-opcion=int(input("Ingrese una Opción:"))
-print('\n')
+def chimie():
+    print("Hola Bienvenido a Chimie un programa que te ayudara en Química")
+    print("\n")
+    print("Por el momento tenemos solo dos opciones que puedes elegir : ")
+    print("\n")
+    print("La primera es obtener datos sobre el elemento que deseas")
+    print("\n")
+    print(
+        "Y la Segunda es aprender a sacar los datos necesarios para que puedas hacer tu estructura de Lewis en compuestos")
+    print("\n")
+    print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2")
 
-if opcion == 1:
-    dict()
+    opcion = int(input("Ingrese una Opción:"))
+    print('\n')
 
-elif opcion == 2:
-    v = int(input('Por favor ingresa la suma de electrones de valencia por cada átomo en tu compuesto : '))
-    r = int(input('Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
-    respuesta=lewis(v,r)
-    print(respuesta)
-else:
-    print('Adios')
+    if opcion == 1:
+        dict()
 
+    elif opcion == 2:
+        v = int(input('Por favor ingresa la suma de electrones de valencia por cada átomo en tu compuesto : '))
+        r = int(input(
+            'Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
+        respuesta = lewis(v, r)
+        print(respuesta)
+    else:
+        print('Adios')
 
-
-
-
+chimie()
