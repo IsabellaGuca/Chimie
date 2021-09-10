@@ -1,4 +1,4 @@
-mydict = {}
+mydict = {}  #No se muy bien como explicar un diccionario pero digamos que hice un libro en el que cada pagina es el elemento y cuando tu la buscas en el indice te da la infomración que yo ingrese en esa página: aquí cree el libro
 mydict['H'] = ['Hidrógeno','Num Atómico : 1']
 mydict['He'] = ['Helio','Num Atómico : 2']
 mydict['Li'] = ['Litio','Num Atómico : 3']
@@ -121,15 +121,15 @@ mydict['Uuo'] = ['Ununoctio','Num Atómico : 118']
 def dict():
     check = True
     while check:
-        print("Tenemos todos estos elementos disponibles", list(mydict.keys()))
-        elemento = input("Ingresa el simbolo del elemento que quieres analizar")
+        print("Tenemos todos estos elementos disponibles", list(mydict.keys()))  #aqui enseño al usuario el menu completo de los elementos
+        elemento = input("Ingresa el simbolo del elemento que quieres analizar")   #con esto llama ala información del elemento que desea
 
         print("\n")
         print(mydict[elemento])
         print("\n")
-        seguir = input("Si desea buscar otro elemento escriba Si. De lo contario presione cualquier tecla")
+        seguir = input("Si desea buscar otro elemento escriba Si. De lo contario presione cualquier tecla")  #aquí le dar la opción de seguir buscando elementos o salir
 
-        if seguir == "Si":
+        if seguir == "Si":  #Aquí estan mis condiciones, me adelnaté un poco desde las tareas pasadas
             check = True
 
         else:
@@ -138,15 +138,15 @@ def dict():
             print("Gracias por usar Chimie :)")
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def lewis(v,r):
-    numero_de_enlaces = (r-v)/2
+    numero_de_enlaces = (r-v)/2   #aqui formulo las operaciones
     electrones_no_compartidos = v-(2*numero_de_enlaces)
     print("El primer valor son los enlaces y el segundo los electrones no compartidos")
     print("\n")
     return numero_de_enlaces, electrones_no_compartidos
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-def chimie():
-    print("Hola Bienvenido a Chimie un programa que te ayudara en Química")
+def chimie():      #aqui es lo que hara mi apartado de generar los datos para desarollar una lewis
+    print("Hola Bienvenido a Chimie un programa que te ayudara en Química") #este es el incio en donde le digo al usuario lo que este programa hace y le doy a escoger entre 2 opciones
     print("\n")
     print("Por el momento tenemos solo dos opciones que puedes elegir : ")
     print("\n")
@@ -159,14 +159,13 @@ def chimie():
 
     opcion = int(input("Ingrese una Opción:"))
     print('\n')
-
-    if opcion == 1:
+#---------------------------------------------------------Aquí llamo a mi función dependiendo de lo que el usuario ingrese :)
+    if opcion == 1:  #Aquí estan mis condiciones, me adelnaté un poco desde las tareas pasadas
         dict()
 
     elif opcion == 2:
         v = int(input('Por favor ingresa la suma de electrones de valencia por cada átomo en tu compuesto : '))
-        r = int(input(
-            'Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
+        r = int(input('Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
         respuesta = lewis(v, r)
         print(respuesta)
     else:
