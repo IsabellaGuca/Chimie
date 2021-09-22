@@ -117,6 +117,16 @@ mydict['Uup'] = ['Ununpentio','Num Atómico : 115']
 mydict['Lv'] = ['Livermorio','Num Atómico : 116']
 mydict['Uus'] = ['Ununseptio','Num Atómico : 117']
 mydict['Uuo'] = ['Ununoctio','Num Atómico : 118']
+#--------------------------------------------------------------------------------------------------------------------------------------
+def menu():
+    print("\n")
+    print("Hola Bienvenido a Chimie un programa que te ayudara en Química")  # este es el incio en donde le digo al usuario lo que este programa hace y le doy a escoger entre 2 opciones
+    print("Por el momento tenemos solo dos opciones que puedes elegir : ")
+    print("La primera es obtener datos sobre el elemento que deseas")
+    print("Y la Segunda es aprender a sacar los datos necesarios para que puedas hacer tu estructura de Lewis en compuestos")
+    print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2")
+    print("En caso de querer salir presione cualquier tecla")
+    print("\n")
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def dict():
     check = True
@@ -140,35 +150,30 @@ def dict():
 def lewis(v,r):
     numero_de_enlaces = (r-v)/2   #aqui formulo las operaciones
     electrones_no_compartidos = v-(2*numero_de_enlaces)
-    print("El primer valor son los enlaces y el segundo los electrones no compartidos")
-    print("\n")
-    return numero_de_enlaces, electrones_no_compartidos
+    if numero_de_enlaces <0:
+        print("No se puede resolver ya que es una excepción")
+    elif numero_de_enlaces>0:
+        print("\n")
+        print("El primer valor son los enlaces y el segundo los electrones no compartidos")
+        return numero_de_enlaces, electrones_no_compartidos
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def chimie():      #aqui es lo que hara mi apartado de generar los datos para desarollar una lewis
-    print("Hola Bienvenido a Chimie un programa que te ayudara en Química") #este es el incio en donde le digo al usuario lo que este programa hace y le doy a escoger entre 2 opciones
-    print("\n")
-    print("Por el momento tenemos solo dos opciones que puedes elegir : ")
-    print("\n")
-    print("La primera es obtener datos sobre el elemento que deseas")
-    print("\n")
-    print(
-        "Y la Segunda es aprender a sacar los datos necesarios para que puedas hacer tu estructura de Lewis en compuestos")
-    print("\n")
-    print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2")
-
-    opcion = int(input("Ingrese una Opción:"))
-    print('\n')
+    while True:
+        menu()
+        opcion = int(input("Ingrese una Opción:"))
+        print('\n')
 #---------------------------------------------------------Aquí llamo a mi función dependiendo de lo que el usuario ingrese :)
-    if opcion == 1:  #Aquí estan mis condiciones, me adelnaté un poco desde las tareas pasadas
-        dict()
+        if opcion == 1:  #Aquí estan mis condiciones, me adelnaté un poco desde las tareas pasadas
+            dict()
 
-    elif opcion == 2:
-        v = int(input('Por favor ingresa la suma de electrones de valencia por cada átomo en tu compuesto : '))
-        r = int(input('Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
-        respuesta = lewis(v, r)
-        print(respuesta)
-    else:
-        print('Adios')
+        elif opcion == 2:
+            v = int(input('Por favor ingresa la suma de electrones de valencia por cada átomo en tu compuesto : '))
+            r = int(input('Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
+            respuesta = lewis(v, r)
+            print(respuesta)
+        else:
+            print('Adiós')
+            break
 
 chimie()
