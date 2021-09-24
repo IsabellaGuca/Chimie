@@ -130,7 +130,7 @@ def menu():
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def dict():
     check = True
-    while check:
+    while check:                        #ciclos
         print("Tenemos todos estos elementos disponibles", list(mydict.keys()))  #aqui enseño al usuario el menu completo de los elementos
         elemento = input("Ingresa el simbolo del elemento que quieres analizar")   #con esto llama ala información del elemento que desea
 
@@ -159,7 +159,7 @@ def lewis(v,r):
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def chimie():      #aqui es lo que hara mi apartado de generar los datos para desarollar una lewis
-    while True:
+    while True:   #ciclos
         menu()
         opcion = int(input("Ingrese una Opción:"))
         print('\n')
