@@ -143,18 +143,23 @@ def dict():
         print("Tenemos todos estos elementos disponibles", list(mydict.keys()))
         elemento = input("Ingresa el simbolo del elemento que quieres analizar")
 
-        print("\n")
-        print(mydict[elemento])
-        print("\n")
-        seguir = input("Si desea buscar otro elemento escriba Si. De lo contario presione cualquier tecla")
-
-        if seguir == "Si":
-            check = True
-
-        else:
-            check = False
+        if elemento in list(mydict.keys()):
             print("\n")
-            print("Gracias por usar Chimie :)")
+            print(mydict[elemento])
+            print("\n")
+            seguir = input("Si desea buscar otro elemento escriba Si. De lo contario presione cualquier tecla")
+
+            if seguir == "Si":
+                check = True
+
+            else:
+                check = False
+                print("\n")
+                print("Gracias por usar Chimie :)")
+        else:
+            print("No existe ese elemento")
+
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def lewis(v,r):
     numero_de_enlaces = (r-v)/2
