@@ -133,21 +133,21 @@ def menu():
     print("Por el momento tenemos solo dos opciones que puedes elegir : ")
     print("La primera es obtener datos sobre el elemento que deseas")
     print("Y la Segunda es aprender a sacar los datos necesarios para que puedas hacer tu estructura de Lewis en compuestos")
-    print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2")
-    print("En caso de querer salir presione cualquier tecla")
+    print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2 ")
+    print("En caso de querer salir, ingresa 3 ")
     print("\n")
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def dict():
     check = True
     while check:
         print("Tenemos todos estos elementos disponibles", list(mydict.keys()))
-        elemento = input("Ingresa el simbolo del elemento que quieres analizar")
+        elemento = input("Ingresa el simbolo del elemento que quieres analizar: ")
 
         if elemento in list(mydict.keys()):
             print("\n")
             print(mydict[elemento])
             print("\n")
-            seguir = input("Si desea buscar otro elemento escriba Si. De lo contario presione cualquier tecla")
+            seguir = input("Si desea buscar otro elemento escriba Si.\n De lo contario presione cualquier tecla: ")
 
             if seguir == "Si":
                 check = True
@@ -175,19 +175,21 @@ def lewis(v,r):
 def chimie():
     while True:
         menu()
-        opcion = int(input("Ingrese una Opción:"))
+        opcion = (input("Ingrese una Opción: "))
         print('\n')
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        if opcion == 1:
+        if opcion == "1":
             dict()
 
-        elif opcion == 2:
+        elif opcion == "2":
             v = int(input('Por favor ingresa la suma de electrones de valencia por cada átomo en tu compuesto : '))
             r = int(input('Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
             respuesta = lewis(v, r)
             print(respuesta)
-        else:
-            print('Adiós')
+        elif opcion == "3":
+            print("Gracias por usar este programa")
             break
+        else:
+            print('Esta opción no esta disponible')
 
 chimie()
