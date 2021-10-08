@@ -124,7 +124,7 @@ mydict['Uus'] = ['Ununseptio','Num Atómico : 117','Periodo,Grupo:7,17','Peso at
 mydict['Uuo'] = ['Ununoctio','Num Atómico : 118','Periodo,Grupo:7,18','Peso atómico:[294]^6']
 #--------------------------------------------------------------------------------------------------------------------------------------
 """
-Este es el incio en donde le digo al usuario lo que este 
+Este es el inicio en donde le digo al usuario lo que este 
 programa hace y le doy a escoger entre 2 opciones
 """
 def menu():
@@ -132,9 +132,10 @@ def menu():
     print("Hola Bienvenido a Chimie un programa que te ayudara en Química")
     print("Por el momento tenemos solo dos opciones que puedes elegir : ")
     print("La primera es obtener datos sobre el elemento que deseas")
-    print("Y la Segunda es aprender a sacar los datos necesarios para que puedas hacer tu estructura de Lewis en compuestos")
-    print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2 ")
-    print("En caso de querer salir, ingresa 3 ")
+    print("La Segunda es aprender a sacar los datos necesarios para que puedas hacer tu estructura de Lewis en compuestos")
+    print("La tercera es visualizar la Tabla periódica")
+    print("Si deseas la opción uno ingresa 1, en caso de querer la segunda ingresa 2 y en caso de querer la tercera ingresa 3")
+    print("En caso de querer salir, ingresa 4 ")
     print("\n")
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def dict():
@@ -159,6 +160,44 @@ def dict():
         else:
             print("No existe ese elemento")
 
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def elementos():
+
+    Metales = ['Li', 'Be','Na', 'Mg', 'Al','K', 'Ca', 'Se', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni',
+               'Cu', 'Zn', 'Ga','Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc',
+              'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn','Cs', 'Ba', 'La',
+              'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu',
+              'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Pb', 'Bi',
+              'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm',
+              'Md', 'No', 'Lr']
+
+    Gases_Nobles = ['He','Ne','Ar','Kr','Xe','Rn']
+
+    Metaloides =['B','Si','Ge','As','Sb','Te','Po','At']
+
+    No_Metales = ['H','C','N','O','F','P','S','Cl','Se','Br','I']
+
+    matriz = [Metales, Gases_Nobles, Metaloides, No_Metales]
+
+    print("Si quieres saber que elementos son Metales ingresa 1\nPara saber que elementos son Gases Nobles ingresa 2\nPara saber que elementos son No Metales ingresa 3\nY para saber que elementos son Metaloides ingresa 4")
+    choice =input()
+    if choice == "1":
+        for elem in matriz[0]:
+            print(elem)
+    elif choice == "2":
+        for elem in matriz[1]:
+            print(elem)
+    elif choice == "3":
+        for elem in matriz[2]:
+            print(elem)
+
+    elif choice == "4":
+        for elem in matriz[3]:
+            print(elem)
+    else:
+        print("Opción no encontrada")
+        elementos()
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def lewis(v,r):
@@ -186,7 +225,9 @@ def chimie():
             r = int(input('Por favor ingresa la suma de electrones requeridos por cada átomo en tu compuesto para conseguir su octeto : '))
             respuesta = lewis(v, r)
             print(respuesta)
-        elif opcion == "3":
+        elif opcion =="3":
+            elementos()
+        elif opcion == "4":
             print("Gracias por usar este programa")
             break
         else:
