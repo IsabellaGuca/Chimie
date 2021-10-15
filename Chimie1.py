@@ -1,5 +1,4 @@
 
-#Hola becario me preguntaba si me puedes ayudar a checar el código completo y los comentarios, gracias <3
 """
 Un diccionario funciona como un
  libro en el que cada página es el elemento y cuando tu la buscas en el
