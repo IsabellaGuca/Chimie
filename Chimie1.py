@@ -1,9 +1,40 @@
+"""
+Proyecto Chimie1
+
+Creado por: Isabella Gutiérrez Cabral
+Matrícula: A01704128
+Octubre 2021
+Profesor:Benjamín Valdés Aguirre
+
+Chimie 1 es un programa que da al usuario información sobre la Tabla periodica, genera con datos que ingresa el
+usuario el numero_de_enlaces y el de electrones_no_compartidos de un compuesto, muestra los elementos que son:
+metales, gases_nobles, no_metales, metaloides ; Y contiene un juego para que el usuario pueda aprender el Num Atómico
+de cada elemento.
+
+Toda la información fue obtenida de la Tabla periódica de los elementos
+
+En este código se usa el método shuffle () que toma una secuencia, como una lista, y reorganiza el orden de los
+elementos.
+
+Referencia:
+        W3Schools. (s.f). Python Random shuffle() Method. 13/10/2021, de W3Schools Sitio web:
+     https://www.w3schools.com/python/ref_random_shuffle.asp
+ """
+
+"""
+================================== Inicio Programa  =====================================
+"""
+
 
 """
 Un diccionario funciona como un
- libro en el que cada página es el elemento y cuando tu la buscas en el
- indice te da la información que yo ingrese en esa página: aquí cree el libro
+libro en el que cada página es el elemento y cuando tu la buscas en el
+indice te da la información que ingrestaste en esa página: aquí cree el diccionario.
+Creé un diccionario que contiene el nombre, numero atómico, periodo, grupo y el peso atómico 
+de cada elemento de la Tabla Periodica para que en oytra función cuando el usario ingrese el elemento
+el programa le muestre toda esta información
  """
+
 mydict = {'H': ['Hidrógeno', 'Num Atómico : 1', 'Periodo,Grupo:1,1', 'Peso atómico:1.00784(7)^2^3^4'],
           'He': ['Helio', 'Num Atómico : 2', 'Periodo,Grupo:1,18', 'Peso atómico:4.002602(2)^2^4'],
           'Li': ['Litio', 'Num Atómico : 3', 'Periodo,Grupo:2,1', 'Peso atómico:6.941(2)2^3^4^5'],
@@ -121,12 +152,17 @@ mydict = {'H': ['Hidrógeno', 'Num Atómico : 1', 'Periodo,Grupo:1,1', 'Peso at�
           'Uus': ['Ununseptio', 'Num Atómico : 117', 'Periodo,Grupo:7,17', 'Peso atómico:[266]^6'],
           'Uuo': ['Ununoctio', 'Num Atómico : 118', 'Periodo,Grupo:7,18', 'Peso atómico:[294]^6']}
 
-"""Este es la presentación de mi programa aquí le digo al usuario lo que puede hacer con este y le pido que ingrese 
-un número que funcionara como la llave o input de las diferentes funciones que mi programa puede hacer incluyendo una 
-opción de salida """
-
 
 def menu():
+    """
+    Este es la presentación de mi programa aquí le digo al usuario lo que puede hacer con este y le pido que
+    ingrese un número que funcionara como la llave o input de las diferentes funciones que mi programa puede hacer
+    incluyendo una opción de salida.Esta función solo imprime texto.
+
+    Recibe:Nada
+    Devuelve:Texto
+    """
+
     print("\n")
     print("Hola Bienvenido a Chimie un programa que te ayudara en Química")
     print("Este programa cuenta con cuatro opciónes : ")
@@ -144,19 +180,20 @@ def menu():
     print("\n")
 
 
-"""Esta función se activa en el momento en el que el usuario ingresa "1" en la introducción al programa(choice=1).Con 
-esta función llamamos al diccionario. Lo primero que hace esta función es imprimir la lista completa de elementos que 
-puede llamar el usuario para obtener su información. Despues pide al usuario que ingrese uno de estos elementos que 
-sera buscado y llamado en el diccionario para que así con la función "mydict[y el elemento que ingreso el usuario]" 
-imprima la información que hay sobre este disponible.Después da la opción de buscar otro elemento o volver a la 
-introducción del programa.
- 
- En esta función usé el El método shuffle () que toma una secuencia, como una lista, y reorganiza el orden de los 
- elementos. W3Schools. (s.f). Python Random shuffle() Method. 13/10/2021, de W3Schools Sitio web: 
- https://www.w3schools.com/python/ref_random_shuffle.asp """
-
-
 def juego():
+    """
+    Esta función se manda a llamar cuando el usuario escoge la opción 5 Esta función utiliza la función shuffle de
+    la librería random para revolver los elementos de una lista, la cual contiene los elementos de la tabla
+    periódica, para posteriormente cuestionar al usuario acerca del número atómico del último elemento de la lista.
+    Debido a que cada vez que se manda llamar la función la lista es revuelta, el último elemento de la lista
+    cambiará constantemente. De igual manera se utilizaron cadenas de strings para la verificación del resultado al
+    igual que para la impresión de la respuesta correcta.
+
+    Recibe: Un número que ingresa el usuario que equivaldría al Numero atómico del elemento generado por el programa.
+    Devuelve: Texto que dice si el numero ingresado es verdaderamente el Numero atómico del elemento generado usando
+              Incorrecto o Correcto junto con la respuesta que sería la correcta.
+     """
+
     from random import shuffle
     ele = list(mydict.keys())
     shuffle(ele)
@@ -169,15 +206,19 @@ def juego():
         print('La Respuesta correcta es ', mydict[ele[-1]][1][-3:])
 
 
-'''Esta función se manda a llamar cuando el usuario escoge la opción 5 Esta función utiliza la función shuffle de la 
-librería random para revolver los elementos de una lista, la cual contiene los elementos de la tabla periódica, 
-para posteriormente cuestionar al usuario acerca del número atómico del último elemento de la lista. Debido a que 
-cada vez que se manda llamar la función la lista es revuelta, el último elemento de la lista cambiará constantemente. 
-De igual manera se utilizaron cadenas de strings para la verificación del resultado al igual que para la impresión de 
-la respuesta correcta. '''
-
-
 def dicti():
+    """
+    Esta función se activa en el momento en el que el usuario ingresa "1" en la introducción al programa(
+    choice=1).Con esta función llamamos al diccionario. Lo primero que hace esta función es imprimir la lista
+    completa de elementos que puede llamar el usuario para obtener su información. Despues pide al usuario que
+    ingrese uno de estos elementos que sera buscado y llamado en el diccionario para que así con la función "mydict[y
+    el elemento que ingreso el usuario]" imprima la información que hay sobre este disponible.Después da la opción de
+    buscar otro elemento o volver a la introducción del programa.
+
+    Recibe: El elemento en Siglas que el usuario ingresa.
+    Devuelve: La información que hay de este elemento ingresado en el diccionario.
+    """
+
     check = True
     while check:
         print("Tenemos todos estos elementos disponibles", list(mydict.keys()))
@@ -198,13 +239,17 @@ def dicti():
             print("No existe ese elemento")
 
 
-"""Esta función se activa en el momento en el que el usuario ingresa "3" en la introducción al programa(choice=3).Con 
-esta función llamamos a una matriz que tiene como próposito imprimir los elementos que sean: metales, gases nobles, 
-metaloides, y no metales.Al usuario se le pregunta que categoria quiere saber y en base a esta respuesta/input se 
-imprimen los datos dentro de ese elemento de la matriz/ la lista anidada. """
-
-
 def elementos():
+    """
+    Esta función se activa en el momento en el que el usuario ingresa "3" en la introducción al programa(
+    choice=3).Con esta función llamamos a una matriz que tiene como próposito imprimir los elementos que sean:
+    metales, gases nobles, metaloides, y no metales.Al usuario se le pregunta que categoria quiere saber y en base a
+    esta respuesta/input se imprimen los datos dentro de ese elemento de la matriz/ la lista anidada.
+
+    Recibe: El número que representa  la categoría de: metales, gases_nobles, no_metales, metaloides dependiendo de
+    la que quiera ver el usuario. Devuelve: La lista/ matriz de los elementos que pertenecen a esa categoría.
+    """
+
     metales = ['Li', 'Be', 'Na', 'Mg', 'Al', 'K', 'Ca', 'Se', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni',
                'Cu', 'Zn', 'Ga', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc',
                'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Cs', 'Ba', 'La',
@@ -243,12 +288,18 @@ def elementos():
         elementos()
 
 
-"""Esta función se activa en el momento en el que el usuario ingresa "2" en la introducción al programa(choice=2).Con 
-esta función llamamos a la función que se va a encargar de calcular el numero de enlaces y el número de electornes no 
-compartidos que facilitara el dibujo del esquema de lewis de este compuesto al usuario. . """
-
-
 def lewis(v, r):
+    """
+    Esta función se activa en el momento en el que el usuario ingresa "2" en la introducción al programa(
+    choice=2).Con esta función llamamos a la función que se va a encargar de calcular el numero de enlaces y el
+    número de electornes no compartidos que facilitara el dibujo del esquema de lewis de este compuesto al usuario.
+
+    Recibe: El numero que equivale a la suma de electrones de valencia por cada átomo del compuesto junto con el
+    numero que equivale a la suma de electrones requeridos por cada átomo del compuesto.
+    Devuelve: El numero_de_enlaces (la resta de los dos datos ingresado sobre dos) y
+    el numero de electrones_no_compartidos (la resta de un valor ingresado menos el doble de numero_de_enlaces).
+    """
+
     numero_de_enlaces = (r - v) / 2
     electrones_no_compartidos = v - (2 * numero_de_enlaces)
     if numero_de_enlaces < 0:
@@ -259,15 +310,20 @@ def lewis(v, r):
         return numero_de_enlaces, electrones_no_compartidos
 
 
-"""Esta es la función más importante, ya que recibe la opción/choice que el usuario ingreso en la introducción del 
-programa dependiendo de lo que quiera hacer con este y en base a este llama a la función que se va a encargar de 
-generar y correr el  respectivo programa y hacerlo funcionar.Si se ingresa una opción que no esta disponible, se le
- avisa al usuarioy también hay una opción para salir y terminar el programa.
- Al ingresar la opción dos pide dos parametros o datos iniciales que al llamar la función serán usados para 
- calcular los resultados con términos químicos. """
-
-
 def chimie():
+    """
+    Esta es la función más importante, ya que recibe la opción/choice que el usuario ingreso en la introducción del
+    programa dependiendo de lo que quiera hacer con este y en base a este llama a la función que se va a encargar de
+    generar y correr el  respectivo programa y hacerlo funcionar.Si se ingresa una opción que no esta disponible, se le
+    avisa al usuarioy también hay una opción para salir y terminar el programa.
+    Al ingresar la opción dos pide dos parametros o datos iniciales que al llamar la función serán usados para
+    calcular los resultados con términos químicos.
+
+    Recibe:El numero respectivo a la opción/choice que el usuario ingreso en la introducción del programa dependiendo
+    de lo que quiera hacer con este. Devuelve: El programa que llama a la función respectiva de esa opción ingresada
+    que define lo que el usuario quiere hacer en el programa.
+    """
+
     while True:
         menu()
         opcion = (input("Ingrese una Opción: "))
