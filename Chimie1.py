@@ -21,6 +21,9 @@ Referencia:
      https://www.w3schools.com/python/ref_random_shuffle.asp
  """
 
+#bibliotecas
+from random import shuffle
+
 """
 ================================== Inicio Programa  =====================================
 """
@@ -182,7 +185,7 @@ def menu():
 
 def juego():
     """
-    Esta función se manda a llamar cuando el usuario escoge la opción 5 Esta función utiliza la función shuffle de
+    Esta función se manda a llamar cuando el usuario escoge la opción 4 Esta función utiliza la función shuffle de
     la librería random para revolver los elementos de una lista, la cual contiene los elementos de la tabla
     periódica, para posteriormente cuestionar al usuario acerca del número atómico del último elemento de la lista.
     Debido a que cada vez que se manda llamar la función la lista es revuelta, el último elemento de la lista
@@ -194,7 +197,6 @@ def juego():
               Incorrecto o Correcto junto con la respuesta que sería la correcta.
      """
 
-    from random import shuffle
     ele = list(mydict.keys())
     shuffle(ele)
     print('Adivina el número atómico del elemento ', ele[-1])
