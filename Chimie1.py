@@ -21,13 +21,12 @@ Referencia:
      https://www.w3schools.com/python/ref_random_shuffle.asp
  """
 
-#bibliotecas
+# bibliotecas
 from random import shuffle
 
 """
 ================================== Inicio Programa  =====================================
 """
-
 
 """
 Un diccionario funciona como un
